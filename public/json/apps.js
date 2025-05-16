@@ -4,11 +4,11 @@ let json =
   description: "Search engine",
   type: "proxy",
   listed: true,
-  route: "google",
+  route: "Duckduckgo.com",
   source: "https://www.duckduckgo.com",
   tags: "",
-  img: "google.png",
-  title: "Google.com"
+  img: "duckduckgo.png",
+  title: "Duckduckgo"
 },
 {
   description: "Linux and other OS's in a browser",
