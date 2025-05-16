@@ -5,7 +5,7 @@ let json =
   type: "proxy",
   listed: true,
   route: "google",
-  source: "https://www.google.com",
+  source: "https://www.duckduckgo.com",
   tags: "",
   img: "google.png",
   title: "Google.com"

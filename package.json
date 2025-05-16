@@ -1,6 +1,6 @@
 {
-	"name": "UniUB v3.1.0",
-	"version": "3.0.0",
+	"name": "JupitersNetworks",
+	"version": "1.0",
 	"description": "quirky ahh ubg site",
 	"packageManager": "pnpm@9.12.3",
 	"engines": {

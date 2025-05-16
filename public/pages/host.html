@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/index.css" />
     <link rel="stylesheet" href="/styles/loader.css">
     <link rel="stylesheet" href="/styles/template.css">
-    <!-- Ultr@v!0l3t -->
     <meta name="googlebot" content="index, follow, snippet" />
     <link rel="shortcut icon" content="favicon.ico" />
     <script src="/baremux/index.js" defer></script>
@@ -18,7 +17,6 @@
     <script src="/uv/uv.config.js" defer></script>
     <script src="/js/uv/register-sw.js" defer></script>
     <script src="/js/uv/search.js" defer></script>
-    <!-- Ultr@v!0l3t -->
   </head>
 <body>
   <div style="animation-delay: 0.5s; position: absolute; height:100vh; width: 100vw; z-index: 1000;" id="particles-js"></div>
@@ -44,20 +42,19 @@
   </div>
 </body>
 <script>
-//vars
 const qs = window.top.location.search;
 const urlParams = new URLSearchParams(qs);
 
 let src = urlParams.get('src');
 let type = urlParams.get('type');
 let title = urlParams.get('title');
-//
 
-//preload
+
+
 document.getElementById('preload').remove();
-//
 
-//functions
+
+
 async function registerServiceWorker(url){
   let connection = new BareMux.BareMuxConnection("/baremux/worker.js")
 
@@ -124,7 +121,7 @@ const xorEncode = {
 };
 //
 
-//load game
+
 function loadGame(){
   let returnValue
   if (type == 'html'){
@@ -140,9 +137,9 @@ function loadGame(){
   }
   return returnValue;
 }
-//
 
-//Load everything once document is loaded
+
+
 function onPageLoad() {
   createAndAppend();
   if (type == 'proxy'){registerServiceWorker();}
@@ -154,6 +151,6 @@ if (document.readyState === 'loading') {
   onPageLoad();
 }
 
-//
+
 </script>
 </html>
