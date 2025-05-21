@@ -163,7 +163,7 @@ function loadPlugin(){
   let pluginInstalled = pluginList.some((plugin) => {
     if (plugin.id === pluginData.id) {
       window.alert("You already have this plugin installed!");
-      return true;  // This causes some() to stop looping
+      return true;  
     }
     return false;
   });

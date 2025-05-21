@@ -44,20 +44,19 @@
   </div>
 </body>
 <script>
-//vars
 const qs = window.top.location.search;
 const urlParams = new URLSearchParams(qs);
 
 let src = urlParams.get('src');
 let type = urlParams.get('type');
 let title = urlParams.get('title');
-//
 
-//preload
+
+
 document.getElementById('preload').remove();
-//
 
-//functions
+
+
 async function registerServiceWorker(url){
   let connection = new BareMux.BareMuxConnection("/baremux/worker.js")
 
@@ -122,9 +121,9 @@ const xorEncode = {
         );
     }
 };
-//
 
-//load game
+
+
 function loadGame(){
   let returnValue
   if (type == 'html'){
@@ -140,9 +139,9 @@ function loadGame(){
   }
   return returnValue;
 }
-//
 
-//Load everything once document is loaded
+
+
 function onPageLoad() {
   createAndAppend();
   if (type == 'proxy'){registerServiceWorker();}
@@ -154,6 +153,6 @@ if (document.readyState === 'loading') {
   onPageLoad();
 }
 
-//
+
 </script>
 </html>

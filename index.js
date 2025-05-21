@@ -1,17 +1,17 @@
-//startup
+
 const port = parseInt(process.env.PORT || "8000", 10);
 const info = {
-	"version": "3.1.0",
+	"version": "1.0",
 }
 
 const startup_msg = `
-| UniUB ${info.version} |
+| JupitersNetworks ${info.version} |
 
 Running on:
 	http://localhost:${port}
 `
 
-// import bs
+
 const http = require("http");
 const { hostname } = require("os");
 const path = require("path");
@@ -20,7 +20,7 @@ const wisp = require("wisp-server-node");
 const cors = require("cors");
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
-// paths
+
 const pubDir = path.join(__dirname, "public");
 const { uvPath } = require("@titaniumnetwork-dev/ultraviolet");
 const { epoxyPath } = require("@mercuryworkshop/epoxy-transport");
@@ -69,7 +69,7 @@ server.on("upgrade", (req, socket, head) => {
 	}
 });
 
-server.listen(port, "0.0.0.0", () => {
+server.listen(80, "0.0.0.0", () => {
 	const address = server.address();
 	console.log(startup_msg)
 });
