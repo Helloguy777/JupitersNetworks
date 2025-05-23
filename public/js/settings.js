@@ -22,15 +22,14 @@ window.addEventListener('DOMContentLoaded',()=>{
         optionElements.push(option)
         
         option.addEventListener('click',()=>{
-            //gts all active elements, sets them to inactive
             document.querySelectorAll('[active="true"]').forEach((oldActiveElem)=>{
                 oldActiveElem.setAttribute('active','false');
             })
 
-            //sets clicked element to active
+            
             option.setAttribute('active','true')
 
-            //sets url to the specific option
+            
             window.top.location.hash = option.id
         })
     })
@@ -40,7 +39,6 @@ window.addEventListener('DOMContentLoaded',()=>{
 })
 
 window.top.addEventListener('hashchange',(e)=>{
-    //set hash to the new hash
     hash = window.top.location.hash
 
     updateElements()
