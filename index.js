@@ -44,26 +44,7 @@ app.use((req, res) => {
 	res.status(404).sendFile(path.join(pubDir, "404.html"));
 });
 
-const httpServer = http.createServer(app);
 
-const sslContexts = {
-	"study.factwiki.me": tls.createSecureContext({
-		key: fs.readFileSync("/etc/letsencrypt/live/study.factwiki.me/privkey.pem"),
-		cert: fs.readFileSync("/etc/letsencrypt/live/study.factwiki.me/fullchain.pem")
-	}),
-	"jupitersnet.miceforlife.com": tls.createSecureContext({
-		key: fs.readFileSync("/etc/letsencrypt/live/jupitersnet.miceforlife.com/privkey.pem"),
-		cert: fs.readFileSync("/etc/letsencrypt/live/jupitersnet.miceforlife.com/fullchain.pem")
-	}),
-	"jupiter.bsfa.info": tls.createSecureContext({
-		key: fs.readFileSync("/etc/letsencrypt/live/jupiter.bsfa.info/privkey.pem"),
-		cert: fs.readFileSync("/etc/letsencrypt/live/jupiter.bsfa.info/fullchain.pem")
-	}),
-	"jupitersnet.leasingindia.com": tls.createSecureContext({
-		key: fs.readFileSync("/etc/letsencrypt/live/jupitersnet.leasingindia.com/privkey.pem"),
-		cert: fs.readFileSync("/etc/letsencrypt/live/jupitersnet.leasingindia.com/fullchain.pem")
-	})
-};
 
 const httpsServer = https.createServer({
 	SNICallback: (servername, cb) => {
