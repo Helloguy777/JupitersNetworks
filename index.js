@@ -11,7 +11,7 @@ import { createProxyMiddleware } from "http-proxy-middleware";
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { libcurlPath } from "@mercuryworkshop/libcurl-transport";
-import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
+import { baremuxPath } from "@mercuryworkshop/bare-mux";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -44,7 +44,26 @@ app.use((req, res) => {
 	res.status(404).sendFile(path.join(pubDir, "404.html"));
 });
 
+const httpServer = http.createServer(app);
 
+const sslContexts = {
+	"study.factwiki.me": tls.createSecureContext({
+		key: fs.readFileSync("/etc/letsencrypt/study.factwiki.me/privkey.pem"),
+		cert: fs.readFileSync("/etc/letsencrypt/study.factwiki.me/fullchain.pem")
+	}),
+	"jupitersnet.miceforlife.com": tls.createSecureContext({
+		key: fs.readFileSync("/etc/letsencrypt/jupitersnet.miceforlife.com/privkey.pem"),
+		cert: fs.readFileSync("/etc/letsencrypt/jupitersnet.miceforlife.com/fullchain.pem")
+	}),
+	"jupiter.bsfa.info": tls.createSecureContext({
+		key: fs.readFileSync("/etc/letsencrypt/jupiter.bsfa.info/privkey.pem"),
+		cert: fs.readFileSync("/etc/letsencrypt/jupiter.bsfa.info/fullchain.pem")
+	}),
+	"Jupitersnet.leasingindia.com": tls.createSecureContext({
+		key: fs.readFileSync("/etc/letsencrypt/Jupitersnet.leasingindia.com/privkey.pem"),
+		cert: fs.readFileSync("/etc/letsencrypt/Jupitersnet.leasingindia.com/fullchain.pem")
+	})
+};
 
 const httpsServer = https.createServer({
 	SNICallback: (servername, cb) => {
