@@ -7,7 +7,7 @@ let json =
   route: "duckduckgo",
   source: "https://duckduckgo.com",
   tags: "",
-  img: "duckduckgo.png",
+  img: "duckduckgo.svg",
   title: "Duckduckgo"
 },
 {
