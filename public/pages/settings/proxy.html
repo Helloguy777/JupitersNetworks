@@ -19,8 +19,8 @@ button{
 <h1>
     Proxy
 </h1>
-<p>[Advanced] Tools for configuring the proxy (Will be updated in the future)</p>
-<p>(This defaults to using Libcurl)</p>
+<p>[Advanced] Tools for configuring the proxy</p>
+<p>(You can use Epoxy only)</p>
 <br>
 <h2>
     Set the transport
@@ -30,9 +30,7 @@ button{
 </p>
 <br>
 <button onclick="setConnection(1)">Epoxy</button>
-<button onclick="setConnection(2)">Libcurl</button>
 <script src="/baremux/index.js"></script>
-<script src="/libcurl/index.js"></script>
 <script src="/epoxy/index.js"></script>
 <script>
 let connection = new BareMux.BareMuxConnection("/baremux/worker.js")
